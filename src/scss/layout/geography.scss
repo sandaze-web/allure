@@ -1,0 +1,102 @@
+.geography {
+  padding-top: 80px;
+  &-box {
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 34px 30px;
+  }
+  &-titleBx {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, #000 100%);
+    }
+    &-imgBx {
+      width: 100%;
+      height: 320px;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    &-main {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      padding: 20px;
+      z-index: 3;
+    }
+    &-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-variants {
+      padding: 11px 16px;
+      font-size: rem(14);
+      color: #fff;
+      border-radius: 50px;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(9px);
+      @include font-onestM;
+    }
+    &-country {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(7px);
+    }
+    &-text {
+      padding-left: 14px;
+      margin-top: auto;
+    }
+    &-title {
+      font-size: rem(24);
+      @include font-onestB;
+      line-height: 120%;
+      color: #fff;
+    }
+    &-subtitle {
+      font-size: rem(14);
+      line-height: 120%;
+      color: #fff;
+      opacity: 0.6;
+      margin-top: 4px;
+    }
+  }
+  @include media(560) {
+    &-box {
+      display: flex;
+      grid-gap: 0;
+      grid-template-columns: unset;
+    }
+    &-swiper {
+      margin-right: -16px;
+    }
+    &__item {
+      &-imgBx {
+        height: 320px;
+      }
+    }
+  }
+}

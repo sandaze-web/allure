@@ -1,0 +1,146 @@
+.content {
+  position: relative;
+  overflow: hidden;
+  &-slide {
+    padding-top: 213px;
+    padding-bottom: 83px;
+    pointer-events: none;
+    & .content__container {
+      height: 100%;
+    }
+    &.swiper-slide-visible {
+      pointer-events: auto;
+    }
+    &-helper {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      height: 100%;
+    }
+  }
+  &__title, &__subtitle, &__button {
+    position: relative;
+    z-index: 3;
+  }
+  &-inner {
+  }
+  & .swiper {
+    position: unset;
+    &-wrapper {
+      position: unset;
+    }
+    &-slide {
+      position: unset;
+      height: auto;
+      transition: 2s opacity;
+    }
+  }
+  &__title {
+    font-size: rem(42);
+    color: #fff;
+    line-height: 120%;
+    max-width: 625px;
+    @include font-onestB;
+  }
+  &__subtitle {
+    margin-top: 20px;
+    color: #fff;
+    line-height: 140%;
+    font-size: rem(18);
+    max-width: 516px;
+    padding-bottom: 140px;
+  }
+  &__button {
+    width: 100%;
+    max-width: 443px;
+    padding: 18px 0;
+    margin-top: auto;
+    display: block;
+    background-color: #fff;
+  }
+  &-imgBx {
+    width: 100%;
+    height: 100%;
+    //pointer-events: none;
+    &-helper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0px 0px 20px 20px;
+      overflow: hidden;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.35) 100%);
+        //pointer-events: none;
+      }
+    }
+  }
+  &-arrowBx {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 16px;
+    bottom: 83px;
+    @include media(1280) {
+      right: 48px;
+    }
+  }
+  &-arrow-helper {
+    position: relative;
+  }
+  &__arrow {
+    width: 59px;
+    height: 59px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.18);
+    cursor: pointer;
+    @include notLast {
+      margin-right: 18px;
+    }
+    & i {
+      color: #fff;
+    }
+  }
+
+  @include media(560) {
+    &__title {
+      font-size: rem(24);
+    }
+    &__subtitle {
+      margin-top: 12px;
+      font-size: rem(16);
+      line-height: 140%;
+      padding-bottom: 189px;
+    }
+    &-slide {
+      padding-bottom: 16px;
+      padding-top: calc(170px);
+    }
+    &__button {
+      width: calc(100% - 112px - 16px);
+      padding: 15px 0;
+      font-size: rem(16);
+    }
+    &-arrowBx {
+      right: 16px;
+      bottom: 16px;
+    }
+    &__arrow {
+      width: 50px;
+      height: 50px;
+      @include notLast {
+        margin-right: 12px;
+      }
+    }
+  }
+}

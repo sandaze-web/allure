@@ -1,0 +1,25 @@
+.about {
+  padding-top: 100px;
+  &__title {
+    @include font-onestB;
+    line-height: 120%;
+  }
+  &-box {
+    padding-top: 20px;
+    max-width: 1170px;
+    & p {
+      line-height: 150%;
+      @include notLast {
+        margin-bottom: 16px;
+      }
+    }
+  }
+  @include media(560) {
+    padding-top: 50px;
+    &-box {
+      & p {
+        opacity: 0.6;
+      }
+    }
+  }
+}

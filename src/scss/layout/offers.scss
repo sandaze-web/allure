@@ -1,0 +1,326 @@
+.offers {
+  padding-top: 60px;
+  &-inner {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    z-index: 4;
+  }
+  &-buttonBx {
+    display: flex;
+    align-items: stretch;
+    margin-top: 30px;
+  }
+  &-priceBx {
+    flex-grow: 1;
+    margin-left: 30px;
+    justify-content: center;
+    border-radius: 10px;
+    border: 2px solid #FFF;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    height: 59px;
+    &__item {
+      @include notLast {
+        margin-left: 12px;
+      }
+    }
+    &__new {
+      font-size: rem(18);
+      color: #fff;
+      @include font-onestB;
+    }
+    &__old {
+      font-size: rem(14);
+      padding-left: 4px;
+      padding-right: 4px;
+      position: relative;
+      display: inline-block;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        width: 100%;
+        height: 2px;
+      }
+      & span {
+        color: #fff;
+        opacity: .6;
+      }
+    }
+    &__sale {
+      display: inline-block;
+      background-color: $--accent-color-main;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 50px;
+      font-size: rem(12);
+      @include font-onestM;
+      margin-left: 12px;
+    }
+  }
+  &-special {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: 30px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 625px;
+    &-tagBx {
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 3;
+      &__item {
+        border-radius: 50px;
+        padding: 11px 16px;
+        font-size: rem(14);
+        @include font-onestM;
+        background: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(9px);
+        display: flex;
+        align-items: center;
+        @include notLast {
+          margin-right: 16px;
+        }
+        & span {
+          &:last-child {
+            color: #fff;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+    &__title {
+      color: #fff;
+      max-width: 393px;
+      margin-top: 30px;
+      position: relative;
+      z-index: 3;
+    }
+    &__subtitle {
+      position: relative;
+      z-index: 3;
+      margin-top: 12px;
+      color: #fff;
+      line-height: 140%;
+      @include lineClamp(2);
+    }
+    &__button {
+      width: 100%;
+      background: $--accent-color-main;
+      color: #fff;
+      position: relative;
+      z-index: 3;
+      max-width: 319px;
+      line-height: normal;
+      height: 59px;
+      & span {
+        color: #fff;
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+    &-imgBx {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 45%, #000 100%);
+      }
+    }
+  }
+
+  &__title {
+    font-size: rem(24);
+    @include font-onestB;
+    line-height: 120%;
+  }
+
+  &-box {
+    flex-grow: 1;
+    padding-left: 30px;
+  }
+  &__item {
+    display: flex;
+    align-items: flex-end;
+    border-radius: 20px;
+    background: #FFF;
+    padding: 30px 0 0 30px;
+    @include notLast {
+      margin-bottom: 30px;
+    }
+    &-main {
+      max-width: 300px;
+      padding-bottom: 30px;
+      margin-right: 30px;
+    }
+    &-subtitle {
+      margin-top: 12px;
+      line-height: 140%;
+      opacity: 0.6;
+    }
+    &-button {
+      margin-top: 25px;
+      padding: 13px 0;
+      width: 100%;
+      color: $--accent-color-main;
+      background: rgba(225, 54, 102, 0.06);
+    }
+    &-imgBx {
+      flex-grow: 1;
+      height: 215px;
+      border-radius: 20px 0px;
+      overflow: hidden;
+    }
+  }
+
+  @include media(768) {
+    padding-top: 30px;
+    overflow: hidden;
+    &-inner {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      overflow-x: auto;
+      margin-left: 16px;
+      margin-bottom: -6px;
+      padding-right: 16px;
+      &::-webkit-scrollbar {
+        width: 2px;
+        height: 5px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #000;
+      }
+    }
+    &-special {
+      width: 320px;
+    }
+    &-box {
+      display: grid;
+      grid-template-columns: repeat(2, 320px);
+      align-items: stretch;
+      padding-left: 12px;
+      grid-gap: 12px;
+    }
+    &__item {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      justify-content: flex-end;
+      @include notLast {
+        margin-bottom: 0;
+      }
+      padding: 0;
+      &-main {
+        margin-right: 0;
+        padding: 30px;
+        width: 100%;
+        max-width: none;
+      }
+      &-imgBx {
+        width: 100%;
+        height: 177px;
+        border-radius: 20px;
+        flex-grow: unset;
+      }
+      &-button {
+        display: none;
+      }
+      &-subtitle {
+        margin-top: 12px;
+        text-align: center;
+        line-height: 120%;
+      }
+    }
+    &__title {
+      font-size: rem(18);
+      text-align: center;
+    }
+    &__container {
+      padding: 0;
+    }
+    &-special {
+      padding: 25px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      &-tagBx {
+        &__item {
+          & span {
+            &:last-child {
+              font-size: rem(12);
+            }
+          }
+        }
+      }
+      &__title {
+        margin-top: auto;
+        text-align: left;
+        font-size: rem(16);
+      }
+      &__subtitle {
+        margin-top: 8px;
+        font-size: rem(14);
+      }
+      &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        & span {
+          display: none;
+          &:last-child {
+            display: block;
+            & i {
+              color: #fff;
+              border-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+    &-buttonBx {
+      display: flex;
+      flex-direction: row-reverse;
+      width: 100%;
+    }
+    &-priceBx {
+      margin-left: 0;
+      margin-right: 15px;
+      flex-grow: 1;
+      max-width: none;
+      height: 50px;
+      &__new {
+        font-size: rem(16);
+        line-height: normal;
+      }
+      &__old {
+        font-size: rem(12);
+        &:after {
+          height: 1px;
+        }
+      }
+    }
+  }
+}

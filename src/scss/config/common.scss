@@ -1,0 +1,43 @@
+// Заголовки, общие БЄМ блоки и проче...
+body {
+  @include font-onestR;
+  background: $--body-color;
+}
+.pb {
+  font-size: rem(18);
+  @include font-onestB;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  font-size: rem(36);
+  @include font-onestB;
+  line-height: 120%;
+  @include media(560) {
+    font-size: rem(20);
+
+  }
+}
+.button-more {
+  color: $--accent-color-main;
+  & span {
+    color: $--accent-color-main;
+    &:last-child {
+      display: none;
+    }
+    @include media(768) {
+      display: none;
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+  @include font-onestR;
+  @include media(560) {
+    font-size: rem(14);
+    white-space: nowrap;
+  }
+}
